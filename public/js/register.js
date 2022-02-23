@@ -12,6 +12,7 @@ form.addEventListener('submit', () => {
         }
     }).then(res => res.json())
         .then(data => {
+            console.log(data);
             if (data.status == 'error') {
                 success.style.display = 'none'
                 error.style.display = 'block'
@@ -20,6 +21,8 @@ form.addEventListener('submit', () => {
                 success.style.display = 'block'
                 error.style.display = 'none'
                 success.innerText = data.success
+                setTimeout(function(){location.href="/"} , 3000);   
+
                 // error.innerText = JSON.stringify(data)
             }
         })

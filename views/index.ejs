@@ -29,7 +29,7 @@
       <div class='container my-5'>
         <div class="card" style="width: 100%;">
             <div class="card-body">
-              <h5 class="card-title">好耶 </h5>
+              <h5 class="card-title">好耶   <%= user.email %> </h5>
                 
 <% if (status =='loggedIn') {%>
   <button class="btn btn-info" ><a  style="color:white; text-decoration: none;" href="/profile">profile</a></button>
@@ -39,6 +39,7 @@
   
     <button class="btn btn-info" ><a  style="color:white; text-decoration: none;" href="/login">登入</a></button>
     <button class="btn btn-info" ><a  style="color:white; text-decoration: none;" href="/register">註冊</a></button>
+    <button class="btn btn-info" ><a  style="color:white; text-decoration: none;" href="/myform">許願表單</a></button>
 
     <%} %>
 
