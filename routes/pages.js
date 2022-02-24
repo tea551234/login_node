@@ -21,11 +21,18 @@ router.get('/myform', (req, res) => {
     
 })
 
+router.get('/Wish', (req, res) => {
+    res.sendFile("Wish.html", { root: "./public" })
+    
+})
+
 
 router.get('/login', (req, res) => {
     res.sendFile("login.html", { root: "./public" })
     
 })
+    
+router.get('/logout', logout)
 
 
 

@@ -10,7 +10,7 @@ const login = async (req, res) => {
             if (Err) throw Err;
             if (!result.length || !await bcrypt.compare(password, result[0].password)) return res.json({
                 status: 'error',
-                error: '密碼錯誤'
+                error: '密碼錯誤 或者無此使用者'
             })
             else {
                 const token = jwt.sign({ id: result[0].id }, process.env.JWT_SECRET, {
