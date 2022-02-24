@@ -2,6 +2,7 @@ form.addEventListener('submit', () => {
     const myform = {
         email: email.value,
         productName: productName.value ,
+        problemOptions:problemOptions.value,
         problem:problem.value
     }
     fetch('/api/myform', {
