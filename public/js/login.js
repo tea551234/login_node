@@ -21,7 +21,7 @@ fetch('/api/login',{
             error.style.display = 'none'
             success.innerText = data.success
             // setTimeout(window.location.assign('/'),10000000)
-            setTimeout(function(){location.href="/"} , 3000);   
+            setTimeout(function(){location.href="/"} , 1000);   
 
             // error.innerText = JSON.stringify(data)
         }

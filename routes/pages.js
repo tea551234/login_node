@@ -1,8 +1,8 @@
 const express = require('express');
 const res = require('express/lib/response');
 const loggedIn = require('../controllers/loggedin');
-const router = express.Router();
 const logout =require('../controllers/logout')
+const router = express.Router();
 
 router.get('/', loggedIn, (req, res) => {
     if (req.user) {
