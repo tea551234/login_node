@@ -4,7 +4,7 @@ const login = require('./login')
 // const logout = require('./logout')
 const myform = require('./myform')
 const Wish = require('./Wish')
-
+const updateuser = require('./updateuser')
 
 
 // const router = express.Router
@@ -18,6 +18,7 @@ router.post('/register',register)
 
 router.post('/myform',myform)
 router.post('/Wish',Wish)
+router.post('/updateuser',updateuser)
 
 
 module.exports=router

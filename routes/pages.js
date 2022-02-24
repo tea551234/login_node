@@ -31,6 +31,12 @@ router.get('/login', (req, res) => {
     res.sendFile("login.html", { root: "./public" })
     
 })
+
+router.get('/updateuser', (req, res) => {
+    res.sendFile("updateuser.html", { root: "./public" })
+    
+})
+
     
 router.get('/logout', logout)
 
