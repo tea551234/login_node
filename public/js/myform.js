@@ -16,3 +16,4 @@ form.addEventListener('submit', () => {
     setTimeout(function(){location.href="/"} , 100)
 
 })
+

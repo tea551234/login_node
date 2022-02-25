@@ -2,6 +2,7 @@ form.addEventListener('submit', () => {
     const Wish = {
         email: email.value,
         WishName: WishName.value ,
+        // wishImag:console.log((wishImag.files))
     }
     fetch('/api/Wish', {
         method: 'post',
@@ -11,6 +12,7 @@ form.addEventListener('submit', () => {
         }
     }
     )
-    setTimeout(function(){location.href="/"} , 100)
+
 
 })
+
