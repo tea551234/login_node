@@ -18,6 +18,49 @@ db.connect((err) => {
     if (err) throw err ;
     console.log('database connected');
 })
+// ===== 許願專區=====
+var 
+   routes = require('./routes')
+  , http = require('http')
+  , path = require('path'),
+	busboy = require("then-busboy"),
+	fileUpload = require('express-fileupload'),
+	mysql      = require('mysql'),
+	bodyParser=require("body-parser");
+	
+var connection = mysql.createConnection({
+	host     : 'localhost',
+	user     : 'root',
+	password : 'root',
+	database : 'test'
+});
+ 
+connection.connect();
+ 
+global.db = connection;
+ 
+// all environments
+app.set('port', process.env.PORT || 8080);
+app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs');
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(fileUpload());
+ 
+ 
+app.get('/wishList', routes.wishList);//call for main index page
+app.post('/', routes.wishList);//call for signup post 
+app.get('/wishingPond/:id',routes.wishingPond);//to render users profile
+//Middleware
+
+app.get('/todowishingPond', function (req, res) {
+    connection.query('SELECT * FROM `users_image`',
+        function (err, result) {
+            res.render('todowishingPond.ejs', { result });
+        })
+});
+// =====demo=====
 
 
 app.use('/' , require('./routes/pages'))

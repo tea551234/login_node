@@ -21,10 +21,7 @@ router.get('/myform', (req, res) => {
     
 })
 
-router.get('/Wish', (req, res) => {
-    res.sendFile("Wish.html", { root: "./public" })
-    
-})
+
 
 
 router.get('/login', (req, res) => {
@@ -39,6 +36,8 @@ router.get('/updateuser', (req, res) => {
 
     
 router.get('/logout', logout)
+
+
 
 
 
