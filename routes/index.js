@@ -6,11 +6,11 @@ exports.wishList = function(req, res){
     message = '';
    if(req.method == "POST"){
       var post  = req.body;
-      var name= post.user_name;
+      var commodity_name= post.commodity_name;
       var pass= post.password;
-      var fname= post.first_name;
-      var lname= post.last_name;
-      var mob= post.mob_no;
+      var email= post.email;
+      var name= post.name;
+      var mob= post.Product_Description;
 
 	  if (!req.files)
 				return res.status(400).send('No files were uploaded.');
@@ -25,10 +25,11 @@ exports.wishList = function(req, res){
 	              if (err)
 
 	                return res.status(500).send(err);
-      					var sql = "INSERT INTO `users_image`(`first_name`,`last_name`,`mob_no`,`user_name`, `password` ,`image`) VALUES ('" + fname + "','" + lname + "','" + mob + "','" + name + "','" + pass + "','" + img_name + "')";
+      					var sql = "INSERT INTO `users_image`(`email`,`name`,`Product_Description`,`commodity_name`, `image`) VALUES ('" + email + "','" + name + "','" + Product_Description + "','" + commodity_name + "','"  + img_name + "')";
 
-    						var query = db.query(sql, function(err, result) {
-    							 res.redirect('wishingPond/'+result.insertId);
+    						var query = db.query(sql,  function(err, result) {
+                         console.log(result);
+    							 res.redirect('todowishingPond');
     						});
 					   });
           } else {
@@ -41,17 +42,7 @@ exports.wishList = function(req, res){
  
 };
 
-exports.wishingPond = function(req, res){
-	var message = '';
-	var id = req.params.id;
-    var sql="SELECT * FROM `users_image` WHERE `id`='"+id+"'"; 
-    db.query(sql, function(err, result){
-	  if(result.length <= 0)
-	  message = "Profile not found!";
-	  
-      res.render('wishingPond.ejs',{data:result, message: message});
-   });
-};
+
 
 
 

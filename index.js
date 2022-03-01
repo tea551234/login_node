@@ -51,7 +51,6 @@ app.use(fileUpload());
  
 app.get('/wishList', routes.wishList);//call for main index page
 app.post('/', routes.wishList);//call for signup post 
-app.get('/wishingPond/:id',routes.wishingPond);//to render users profile
 //Middleware
 
 app.get('/todowishingPond', function (req, res) {
