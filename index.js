@@ -32,7 +32,7 @@ var connection = mysql.createConnection({
 	host     : 'localhost',
 	user     : 'root',
 	password : 'root',
-	database : 'test'
+	database : 'sql_login'
 });
  
 connection.connect();

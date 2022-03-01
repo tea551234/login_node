@@ -27,18 +27,22 @@
 <style>
 body {
 	background-color: #FFF;
- }
+}
  .card img{
 	 height: 300px;
  }
 .card-body{
 	 height: 200px;
+	 
 	 border-top: 2px solid #545b6e	}
+	 
 	 
 .wish-card{
 	border: 3 solid #545b6e;
 	box-shadow: 10px 10px 5px #888888;
+
  }
+
 
 
  /* ===== */
@@ -94,32 +98,31 @@ body {
         
         
 
-
+<!-- ====== 匯入許願池項目 ===== -->
         
     <div class="container  container-wish">
 		<div class="row" id="myoption">
       <% for ( var result of result ) { %>
 		<div class="col-lg-4 mb-4">
+			<a href="" style="text-decoration: none; color: black;" >
 			<div class="card wish-card">
 			  <img src="http://localhost:5000/images/upload_images/<%= result.image %>" alt="" class="card-img-top">
 			  <div class="card-body">
 				<h5 class="card-title"><%= result.commodity_name %></h5>
-				<p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. </p>
-			   <a href="#" class="btn btn-outline-success btn-sm">Read More</a>
-
-				
-
-
-
+				<p class="card-text"><%= result.Product_Description %> </p>
 			  </div>
 			 </div>
+			</a>
 			</div>
-    
    	   
      <% } %>
 
     </div>
-            <!-- <div class="col-md-4"><img src="/素材圖片/商品圖/推巾/2018感謝祭.jpg" alt=""><h2>商品1</h2></div>
+<!-- ====== 匯入許願池項目 ===== -->
+
+
+
+	<!-- <div class="col-md-4"><img src="/素材圖片/商品圖/推巾/2018感謝祭.jpg" alt=""><h2>商品1</h2></div>
             <div class="col-md-4"><img src="/素材圖片/商品圖/推巾/2019全國tour.jpg" alt=""><h2>商品2</h2></div>
             <div class="col-md-4"><img src="/素材圖片/商品圖/推巾/2019春con.jpg" alt=""><h2>商品3</h2></div>
 

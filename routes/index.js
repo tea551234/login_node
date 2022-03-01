@@ -6,11 +6,11 @@ exports.wishList = function(req, res){
     message = '';
    if(req.method == "POST"){
       var post  = req.body;
-      var commodity_name= post.commodity_name;
-      var pass= post.password;
+      // console.log(post);
       var email= post.email;
       var name= post.name;
-      var mob= post.Product_Description;
+      var commodity_name= post.commodity_name;
+      var Product_Description= post.Product_Description;
 
 	  if (!req.files)
 				return res.status(400).send('No files were uploaded.');
@@ -25,10 +25,9 @@ exports.wishList = function(req, res){
 	              if (err)
 
 	                return res.status(500).send(err);
-      					var sql = "INSERT INTO `users_image`(`email`,`name`,`Product_Description`,`commodity_name`, `image`) VALUES ('" + email + "','" + name + "','" + Product_Description + "','" + commodity_name + "','"  + img_name + "')";
-
-    						var query = db.query(sql,  function(err, result) {
-                         console.log(result);
+      					var sql = "INSERT INTO `users_image`(`email`,`name`,`commodity_name`,`Product_Description`, `image`) VALUES ('" + email + "','" + name + "','" + commodity_name + "','" + Product_Description + "','"  + img_name + "')";
+    						var query = db.query(sql, function(err, result) {
+                         console.log(result.insertId);
     							 res.redirect('todowishingPond');
     						});
 					   });
